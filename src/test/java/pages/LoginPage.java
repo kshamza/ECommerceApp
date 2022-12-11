@@ -11,7 +11,6 @@ public class LoginPage extends Page {
         PageFactory.initElements(driver, this);
     }
 
-
     public By emailInputBox(){
         return By.xpath("//input[@class=\"email\"]");
     }
