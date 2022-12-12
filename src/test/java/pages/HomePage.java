@@ -19,5 +19,8 @@ public class HomePage extends Page {
         return By.className("ico-register");
     }
 
+    public By logoutLink(){
+        return By.className("ico-logout");
+    }
 
 }

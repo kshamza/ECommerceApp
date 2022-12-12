@@ -16,8 +16,8 @@ public class LoginStepDefinition {
     LoginPage login;
     WebDriver driver;
 
-    @Given("user opens browser and navigates to test site")
-    public void user_opens_browser_navigates_to_test_site() throws InterruptedException{
+    @Given("user opens browser and navigates to test site to login")
+    public void user_opens_browser_navigates_to_test_site_to_login() throws InterruptedException{
         String chromePath = System.getProperty("user.dir") + "/src/main/resources/browsers/chrome/chromedriver_108.exe";
         System.setProperty("webdriver.chrome.driver", chromePath);
         driver = new ChromeDriver();
@@ -55,9 +55,9 @@ public class LoginStepDefinition {
         Assert.assertEquals(expectedResult, driver.getCurrentUrl());
     }
 
-    @And("logout link appears")
+    @And("logout link appears after login")
     public void logout_link_appears(){
-        Assert.assertNotNull(driver.findElement(login.logoutLink()));
+        Assert.assertNotNull(driver.findElement(homePage.logoutLink()));
     }
 
 }

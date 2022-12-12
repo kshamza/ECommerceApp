@@ -29,7 +29,7 @@ public class RegistrationPage extends Page{
         return By.xpath("//select[@name=\"DateOfBirthDay\"]");
     }
 
-    public By monthOfBorth(){
+    public By monthOfBirth(){
         return By.xpath("//select[@name=\"DateOfBirthMonth\"]");
     }
 
@@ -65,10 +65,5 @@ public class RegistrationPage extends Page{
     public By continueButton(){
         return By.xpath("//a[contains(@class,\"register-continue-button\")]");
     }
-
-    public By logoutLink(){
-        return By.className("ico-logout");
-    }
-
 
 }

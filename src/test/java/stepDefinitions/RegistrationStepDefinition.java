@@ -23,7 +23,7 @@ public class RegistrationStepDefinition {
     String emailAddress = "adamsandler@gmail.com";
     String password = "adamsandler";
     String dayOfBirth = "15";
-    String monthOfBirth = "May";
+    String monthOfBirth = "5";
     String yearOfBirth = "1975";
     String companyName = "Sandlers Inc.";
 
@@ -86,7 +86,7 @@ public class RegistrationStepDefinition {
         Select dateSelectMenu = new Select(daySelect);
         dateSelectMenu.selectByValue(dayOfBirth);
 
-        WebElement monthSelect = driver.findElement(registration.monthOfBorth());
+        WebElement monthSelect = driver.findElement(registration.monthOfBirth());
         Select monthSelectMenu = new Select(monthSelect);
         monthSelectMenu.selectByValue(monthOfBirth);
 
@@ -121,7 +121,7 @@ public class RegistrationStepDefinition {
 
     @And("logout link appears")
     public void logout_link_appears(){
-        Assert.assertNotNull(driver.findElement(registration.logoutLink()));
+        Assert.assertNotNull(driver.findElement(homePage.logoutLink()));
     }
 
 }

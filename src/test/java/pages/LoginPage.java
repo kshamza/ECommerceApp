@@ -23,8 +23,4 @@ public class LoginPage extends Page {
         return By.xpath("//button[contains(@class,\"login-button\")]");
     }
 
-    public By logoutLink(){
-        return By.className("ico-logout");
-    }
-
 }
