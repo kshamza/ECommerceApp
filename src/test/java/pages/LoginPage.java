@@ -23,4 +23,8 @@ public class LoginPage extends Page {
         return By.xpath("//button[contains(@class,\"login-button\")]");
     }
 
+    public By forgotPasswordLink(){
+        return By.xpath("//a[@href=\"/passwordrecovery\"]");
+    }
+
 }

@@ -7,6 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import pages.HomePage;
 import pages.LoginPage;
 
@@ -26,12 +27,16 @@ public class LoginStepDefinition {
 
     @When("user enters valid email")
     public void user_enters_valid_email(){
-        driver.findElement(login.emailInputBox()).sendKeys("adamsandler@gmail.com");
+        WebElement emailBox = driver.findElement(login.emailInputBox());
+        emailBox.clear();
+        emailBox.sendKeys("adamsandler@gmail.com");
     }
 
     @And("user enters valid password")
     public void user_enters_valid_password(){
-        driver.findElement(login.passwordInputBox()).sendKeys("adamsandler");
+        WebElement passwordBox = driver.findElement(login.passwordInputBox());
+        passwordBox.clear();
+        passwordBox.sendKeys("adamsandler");
     }
 
     @And("user clicks login button")

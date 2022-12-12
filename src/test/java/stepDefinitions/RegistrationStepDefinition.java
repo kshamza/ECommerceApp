@@ -40,28 +40,38 @@ public class RegistrationStepDefinition {
 
     @When("user enters first name")
     public void user_enters_first_name(){
-        driver.findElement(registration.firstNameTextBox()).sendKeys("Adam");
+        WebElement firstNameBox = driver.findElement(registration.firstNameTextBox());
+        firstNameBox.clear();
+        firstNameBox.sendKeys("Adam");
     }
 
     @And("user enters last name")
     public void user_enters_last_name(){
-        driver.findElement(registration.lastNameTextBox()).sendKeys("Sandler");
+        WebElement lastNameBox =  driver.findElement(registration.lastNameTextBox());
+        lastNameBox.clear();
+        lastNameBox.sendKeys("Sandler");
     }
 
     @And("user enters email")
     public void user_enters_email(){
         Random rG = new Random();
-        driver.findElement(registration.emailTextBox()).sendKeys(emailAddress + rG.nextInt(1000) + "@gmail.com" );
+        WebElement emailBox = driver.findElement(registration.emailTextBox());
+        emailBox.clear();
+        emailBox.sendKeys(emailAddress + rG.nextInt(1000) + "@gmail.com" );
     }
 
     @And("user enters password")
     public void user_enters_password(){
-        driver.findElement(registration.passwordTextBox()).sendKeys(password);
+        WebElement passwordBox = driver.findElement(registration.passwordTextBox());
+        passwordBox.clear();
+        passwordBox.sendKeys(password);
     }
 
     @And("user confirms password")
     public void user_confirms_password(){
-        driver.findElement(registration.confirmPasswordTextBox()).sendKeys(password);
+        WebElement confirmPasswordBox = driver.findElement(registration.confirmPasswordTextBox());
+        confirmPasswordBox.clear();
+        confirmPasswordBox.sendKeys(password);
     }
 
     @And("user clicks on register button")
@@ -86,7 +96,9 @@ public class RegistrationStepDefinition {
 
     @And("user enters company name")
     public void user_enters_company_name(){
-        driver.findElement(registration.companyTextBox()).sendKeys(companyName);
+        WebElement companyNameBox = driver.findElement(registration.companyTextBox());
+        companyNameBox.clear();
+        companyNameBox.sendKeys(companyName);
     }
 
     @Then("redirects to result page")
