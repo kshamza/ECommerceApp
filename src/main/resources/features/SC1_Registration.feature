@@ -1,8 +1,8 @@
 Feature: User could register with valid data
 
   Background:
-    Given user opens browser and navigates to test site
-    And user navigates to registration page
+#    Given user opens browser and navigates to test site
+    Given user navigates to registration page
 
     When user enters first name
     And user enters last name

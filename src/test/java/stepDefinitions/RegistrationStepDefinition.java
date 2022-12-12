@@ -1,18 +1,14 @@
 package stepDefinitions;
 
-import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.en_scouse.An;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import pages.HomePage;
-import pages.LoginPage;
 import pages.RegistrationPage;
 
 import java.util.Random;
@@ -29,18 +25,9 @@ public class RegistrationStepDefinition {
     String yearOfBirth = "1975";
     String companyName = "Sandlers Inc.";
 
-    @Given("user opens browser and navigates to test site")
-    public void user_opens_browser_navigates_to_test_site() throws InterruptedException{
-        String chromePath = System.getProperty("user.dir") + "/src/main/resources/browsers/chrome/chromedriver_108.exe";
-        System.setProperty("webdriver.chrome.driver", chromePath);
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        Thread.sleep(3000);
-        driver.navigate().to("https://demo.nopcommerce.com/");
-    }
-
-    @And("user navigates to registration page")
-    public void user_navigate_to_registration_page(){
+    @Given("user navigates to registration page")
+    public void user_navigates_to_registration_page(){
+        driver = SharedSteps.getDriver();
         homePage = new HomePage(driver);
         driver.findElement(homePage.registerLink()).click();
         registration = new RegistrationPage(driver);
@@ -124,8 +111,4 @@ public class RegistrationStepDefinition {
         Assert.assertNotNull(driver.findElement(homePage.logoutLink()));
     }
 
-    @After
-    public void closeBrowser(){
-        driver.quit();
-    }
 }

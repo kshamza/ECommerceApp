@@ -7,7 +7,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import pages.HomePage;
 import pages.LoginPage;
 
@@ -17,19 +16,9 @@ public class LoginStepDefinition {
     LoginPage login;
     WebDriver driver;
 
-    @Given("user opens browser and navigates to test site to login")
-    public void user_opens_browser_navigates_to_test_site_to_login() throws InterruptedException{
-        String chromePath = System.getProperty("user.dir") + "/src/main/resources/browsers/chrome/chromedriver_108.exe";
-        System.setProperty("webdriver.chrome.driver", chromePath);
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        Thread.sleep(3000);
-        driver.navigate().to("https://demo.nopcommerce.com/");
-    }
-
-
-    @And("user navigates to login page")
-    public void user_navigate_to_login_page(){
+    @Given("user navigates to login page")
+    public void user_navigates_to_login_page(){
+        driver = SharedSteps.getDriver();
         homePage = new HomePage(driver);
         driver.findElement(homePage.loginLink()).click();
         login = new LoginPage(driver);
@@ -61,9 +50,4 @@ public class LoginStepDefinition {
         Assert.assertNotNull(driver.findElement(homePage.logoutLink()));
     }
 
-    @After
-    public void closeBrowser(){
-        System.out.println(driver == null);
-        driver.quit();
-    }
 }

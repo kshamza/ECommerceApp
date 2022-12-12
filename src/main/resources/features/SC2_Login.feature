@@ -1,8 +1,8 @@
 Feature: User could log in with valid email and password
 
   Background:
-    Given user opens browser and navigates to test site to login
-    And user navigates to login page
+#    Given user opens browser and navigates to test site
+    Given user navigates to login page
 
     # Test Scenario 1
   Scenario: user can login with valid email and password
