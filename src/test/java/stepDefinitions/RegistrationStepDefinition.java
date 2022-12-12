@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,13 +15,14 @@ import pages.HomePage;
 import pages.LoginPage;
 import pages.RegistrationPage;
 
+import java.util.Random;
+
 public class RegistrationStepDefinition {
 
     HomePage homePage;
     RegistrationPage registration;
     WebDriver driver;
-
-    String emailAddress = "adamsandler@gmail.com";
+    String emailAddress = "adamsandler";
     String password = "adamsandler";
     String dayOfBirth = "15";
     String monthOfBirth = "5";
@@ -56,13 +58,13 @@ public class RegistrationStepDefinition {
 
     @And("user enters last name")
     public void user_enters_last_name(){
-        driver.findElement(registration.lastNameTextBox()).sendKeys("Adam");
+        driver.findElement(registration.lastNameTextBox()).sendKeys("Sandler");
     }
-
 
     @And("user enters email")
     public void user_enters_email(){
-        driver.findElement(registration.emailTextBox()).sendKeys(emailAddress);
+        Random rG = new Random();
+        driver.findElement(registration.emailTextBox()).sendKeys(emailAddress + rG.nextInt(1000) + "@gmail.com" );
     }
 
     @And("user enters password")
@@ -100,7 +102,6 @@ public class RegistrationStepDefinition {
         driver.findElement(registration.companyTextBox()).sendKeys(companyName);
     }
 
-
     @Then("redirects to result page")
     public void redirects_to_result_page(){
         String expectedResult = "https://demo.nopcommerce.com/registerresult/1?returnUrl=/";
@@ -118,10 +119,13 @@ public class RegistrationStepDefinition {
         Assert.assertTrue(driver.findElement(registration.continueButton()).isDisplayed());
     }
 
-
     @And("logout link appears")
     public void logout_link_appears(){
         Assert.assertNotNull(driver.findElement(homePage.logoutLink()));
     }
 
+    @After
+    public void closeBrowser(){
+        driver.quit();
+    }
 }

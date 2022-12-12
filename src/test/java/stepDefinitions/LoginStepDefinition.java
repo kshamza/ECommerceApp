@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -60,4 +61,9 @@ public class LoginStepDefinition {
         Assert.assertNotNull(driver.findElement(homePage.logoutLink()));
     }
 
+    @After
+    public void closeBrowser(){
+        System.out.println(driver == null);
+        driver.quit();
+    }
 }
