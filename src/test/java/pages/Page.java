@@ -12,8 +12,4 @@ public class Page {
         this.driver = driver;
     }
 
-    public By logoutLink(){
-        return By.className("ico-logout");
-    }
-
 }
