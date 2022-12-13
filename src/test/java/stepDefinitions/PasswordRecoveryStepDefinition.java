@@ -28,7 +28,7 @@ public class PasswordRecoveryStepDefinition {
     public void user_enters_a_registered_email(){
         WebElement textBoxElement = driver.findElement(passwordRecoveryPage.emailTextBox());
         textBoxElement.clear();
-        textBoxElement.sendKeys("adamsandler@gmail.com");
+        textBoxElement.sendKeys(DataHub.registeredEmail);
     }
 
 

@@ -15,15 +15,13 @@ public class SearchStepDefinition {
     SearchPage searchPage;
     WebDriver driver;
 
-    String searchTerm = "shoes";
-
     @When("user enters a valid search term in the search box")
     public void user_enters_a_valid_search_term_in_the_search_box(){
         driver = SharedSteps.getDriver();
         searchPage = new SearchPage(driver);
         WebElement searchBox = driver.findElement(searchPage.searchBox());
         searchBox.clear();
-        searchBox.sendKeys(searchTerm);
+        searchBox.sendKeys(DataHub.searchTerm);
     }
 
     @And("user clicks the search button")
@@ -41,7 +39,7 @@ public class SearchStepDefinition {
         int count = 0;
         for (WebElement product : products){
             WebElement productTitle = product.findElement(By.xpath("//h2/a"));
-            if (productTitle != null && productTitle.getText().toLowerCase().contains(searchTerm.toLowerCase())){
+            if (productTitle != null && productTitle.getText().toLowerCase().contains(DataHub.searchTerm.toLowerCase())){
                 count++;
             }
         }

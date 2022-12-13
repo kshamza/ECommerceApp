@@ -10,7 +10,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.HomePage;
 import pages.LoginPage;
-import pages.SearchPage;
 
 public class LoginStepDefinition {
 
@@ -30,14 +29,14 @@ public class LoginStepDefinition {
     public void user_enters_valid_email(){
         WebElement emailBox = driver.findElement(login.emailInputBox());
         emailBox.clear();
-        emailBox.sendKeys("adamsandler@gmail.com");
+        emailBox.sendKeys(DataHub.registeredEmail);
     }
 
     @And("user enters valid password")
     public void user_enters_valid_password(){
         WebElement passwordBox = driver.findElement(login.passwordInputBox());
         passwordBox.clear();
-        passwordBox.sendKeys("adamsandler");
+        passwordBox.sendKeys(DataHub.password);
     }
 
     @And("user clicks login button")

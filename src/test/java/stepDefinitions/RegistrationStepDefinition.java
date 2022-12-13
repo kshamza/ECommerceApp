@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 import pages.HomePage;
 import pages.RegistrationPage;
 
+import javax.xml.crypto.Data;
 import java.util.Random;
 
 public class RegistrationStepDefinition {
@@ -18,12 +19,7 @@ public class RegistrationStepDefinition {
     HomePage homePage;
     RegistrationPage registration;
     WebDriver driver;
-    String emailAddress = "adamsandler";
-    String password = "adamsandler";
-    String dayOfBirth = "15";
-    String monthOfBirth = "5";
-    String yearOfBirth = "1975";
-    String companyName = "Sandlers Inc.";
+
 
     @Given("user navigates to registration page")
     public void user_navigates_to_registration_page(){
@@ -54,24 +50,23 @@ public class RegistrationStepDefinition {
 
     @And("user enters email")
     public void user_enters_email(){
-        Random rG = new Random();
         WebElement emailBox = driver.findElement(registration.emailTextBox());
         emailBox.clear();
-        emailBox.sendKeys(emailAddress + rG.nextInt(1000) + "@gmail.com" );
+        emailBox.sendKeys(DataHub.getEmailAddress());
     }
 
     @And("user enters password")
     public void user_enters_password(){
         WebElement passwordBox = driver.findElement(registration.passwordTextBox());
         passwordBox.clear();
-        passwordBox.sendKeys(password);
+        passwordBox.sendKeys(DataHub.password);
     }
 
     @And("user confirms password")
     public void user_confirms_password(){
         WebElement confirmPasswordBox = driver.findElement(registration.confirmPasswordTextBox());
         confirmPasswordBox.clear();
-        confirmPasswordBox.sendKeys(password);
+        confirmPasswordBox.sendKeys(DataHub.password);
     }
 
     @And("user clicks on register button")
@@ -83,22 +78,22 @@ public class RegistrationStepDefinition {
     public void user_selects_date_of_birth(){
         WebElement daySelect = driver.findElement(registration.dateOfBirth());
         Select dateSelectMenu = new Select(daySelect);
-        dateSelectMenu.selectByValue(dayOfBirth);
+        dateSelectMenu.selectByValue(DataHub.dayOfBirth);
 
         WebElement monthSelect = driver.findElement(registration.monthOfBirth());
         Select monthSelectMenu = new Select(monthSelect);
-        monthSelectMenu.selectByValue(monthOfBirth);
+        monthSelectMenu.selectByValue(DataHub.monthOfBirth);
 
         WebElement yearSelect = driver.findElement(registration.yearOfBirth());
         Select yearSelectMenu = new Select(yearSelect);
-        yearSelectMenu.selectByValue(yearOfBirth);
+        yearSelectMenu.selectByValue(DataHub.yearOfBirth);
     }
 
     @And("user enters company name")
     public void user_enters_company_name(){
         WebElement companyNameBox = driver.findElement(registration.companyTextBox());
         companyNameBox.clear();
-        companyNameBox.sendKeys(companyName);
+        companyNameBox.sendKeys(DataHub.companyName);
     }
 
     @Then("redirects to result page")

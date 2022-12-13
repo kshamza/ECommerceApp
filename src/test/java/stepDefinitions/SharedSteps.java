@@ -17,6 +17,7 @@ public class SharedSteps {
     @Before
     public void user_opens_browser_and_navigates_to_test_site() throws InterruptedException{
         String chromePath = System.getProperty("user.dir") + "/src/main/resources/browsers/chrome/chromedriver_108.exe";
+        System.setProperty("webdriver.chrome.driver", chromePath);
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         Thread.sleep(3000);
