@@ -1,4 +1,3 @@
-@current-feature
 Feature: Logged user could select different tags
 
   Background:

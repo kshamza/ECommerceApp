@@ -70,6 +70,5 @@ public class CategorySelectionStepDefinition {
         // Get the list of products
         List<WebElement> products = driver.findElements(productsPage.productItems());
         Assert.assertTrue(products.size() > 0);
-
     }
 }

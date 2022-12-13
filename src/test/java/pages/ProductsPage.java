@@ -13,4 +13,8 @@ public class ProductsPage extends Page {
         return By.className("product-item");
     }
 
+    public By availableColors(){
+        return By.xpath("//ul[contains(@class,\"group product-spec-group product-spec-color\")]/li[contains(@class,\"item\")]/input");
+    }
+
 }
