@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.HomePage;
 import pages.LoginPage;
+import pages.SearchPage;
 
 public class LoginStepDefinition {
 
@@ -54,5 +55,17 @@ public class LoginStepDefinition {
     public void logout_link_appears(){
         Assert.assertNotNull(driver.findElement(homePage.logoutLink()));
     }
+
+
+    @And("user successfully logs in")
+    public void user_successfully_logs_in(){
+        driver = SharedSteps.getDriver();
+        user_enters_valid_email();
+        user_enters_valid_password();
+        user_clicks_login_button();
+        user_is_redirected_to_homepage();
+        logout_link_appears();
+    }
+
 
 }
