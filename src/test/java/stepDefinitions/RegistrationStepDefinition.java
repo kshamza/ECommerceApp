@@ -10,9 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import pages.HomePage;
 import pages.RegistrationPage;
-
-import javax.xml.crypto.Data;
-import java.util.Random;
+import utils.DataHub;
 
 public class RegistrationStepDefinition {
 

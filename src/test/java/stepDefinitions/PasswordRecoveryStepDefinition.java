@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.LoginPage;
 import pages.PasswordRecoveryPage;
+import utils.DataHub;
 
 public class PasswordRecoveryStepDefinition {
 

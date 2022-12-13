@@ -1,3 +1,4 @@
+@current-feature
 Feature: User could register with valid data
 
   Background:
@@ -20,15 +21,15 @@ Feature: User could register with valid data
       And continue button appears
       And logout link appears
 
-    # Test Scenario 2
-    Scenario: user can register with all fields
-      When user selects gender
-      And user selects date of birth
-      And user enters company name
-
-      And user clicks on register button
-
-      Then redirects to result page
-      And success message appears
-      And continue button appears
-      And logout link appears
+#    # Test Scenario 2
+#    Scenario: user can register with all fields
+#      When user selects gender
+#      And user selects date of birth
+#      And user enters company name
+#
+#      And user clicks on register button
+#
+#      Then redirects to result page
+#      And success message appears
+#      And continue button appears
+#      And logout link appears

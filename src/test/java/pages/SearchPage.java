@@ -17,7 +17,7 @@ public class SearchPage extends HomePage {
         return By.xpath("//button[contains(@class,\"button-1 search-box-button\")]");
     }
 
-    public By productItem(){
+    public By productItems(){
         return By.className("product-item");
     }
 

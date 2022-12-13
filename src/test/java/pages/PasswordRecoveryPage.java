@@ -11,7 +11,6 @@ public class PasswordRecoveryPage extends Page {
         PageFactory.initElements(driver, this);
     }
 
-
     public By emailTextBox(){
         return By.xpath("//input[@class=\"email\"]");
     }

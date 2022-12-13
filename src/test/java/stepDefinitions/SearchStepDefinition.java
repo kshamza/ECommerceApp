@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.SearchPage;
+import utils.DataHub;
 
 import java.util.List;
 
@@ -33,7 +34,7 @@ public class SearchStepDefinition {
     @Then("products display and their name contain the search term")
     public void products_display_and_their_name_contain_the_search_term(){
         // Get the list of products
-        List<WebElement> products = driver.findElements(searchPage.productItem());
+        List<WebElement> products = driver.findElements(searchPage.productItems());
 
         // Check if the results contain the keywords of the search
         int count = 0;
