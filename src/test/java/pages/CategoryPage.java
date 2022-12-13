@@ -10,7 +10,7 @@ public class CategoryPage extends Page {
     }
 
     public By popularTags(){
-        return By.xpath("//div[@class='tags']//li");
+        return By.xpath("//div[@class='tags']//li//a");
     }
 
 }

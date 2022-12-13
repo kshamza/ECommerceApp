@@ -10,4 +10,4 @@ Feature: Logged User could search for any product
     When user enters a valid search term in the search box
     And user clicks the search button
 
-    Then products display and their name contain the search term
+    Then products display and their names contain the search term

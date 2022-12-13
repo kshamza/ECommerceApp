@@ -10,6 +10,6 @@ Feature: Logged user could select different tags
   Scenario: user can select any tag from any product category
     When user randomly selects one of the categories in the top menu
     And user randomly selects one of the tags in the Popular tags section
-#    And user randomly selects one of the products displayed
-#
-#    Then the product selected by the user has a tag that matches the selected tag by the user
+    And user randomly selects one of the products displayed after selecting a tag
+
+    Then the product selected by the user has a tag that matches the selected tag by the user
