@@ -9,4 +9,16 @@ public class HomePage extends Page {
         super(driver);
     }
 
+    public By shoppingCart(){
+        return By.className("cart-label");
+    }
+
+    public By wishlistPage(){
+        return By.className("wishlist-label");
+    }
+
+    public By customerServiceLinks(){
+        return By.xpath("//div[@class=\"footer-block customer-service\"]//ul[@class=\"list\"]//li//a");
+    }
+
 }

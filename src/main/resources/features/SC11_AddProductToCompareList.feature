@@ -1,4 +1,4 @@
-@current-feature
+
 Feature: Logged user could add different products to compare list
 
   Background:

@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.HomePage;
+import pages.ShoppingCartPage;
 import pages.SubcategoryPage;
 
 import java.util.List;
@@ -16,6 +17,7 @@ public class AddProductToStepDefinition {
 
     WebDriver driver;
     HomePage homePage;
+    ShoppingCartPage shoppingCartPage;
     SubcategoryPage subcategoryPage;
 
     WebElement product;
@@ -145,10 +147,11 @@ public class AddProductToStepDefinition {
         String itemName = item.findElement(By.className("product-title")).getText();
 
         // Navigate to the cart
-        driver.findElement(By.className("cart-label")).click();
+        driver.findElement(homePage.shoppingCart()).click();
 
         // Get all the elements in the shopping cart
-        List<WebElement> shoppingCartProducts = driver.findElements(By.xpath("//tr/td[@class=\"product\"]"));
+        shoppingCartPage = new ShoppingCartPage(driver);
+        List<WebElement> shoppingCartProducts = driver.findElements(shoppingCartPage.shoppingCartItems());
 
         boolean itemInList = false;
 
@@ -169,7 +172,7 @@ public class AddProductToStepDefinition {
         String itemName = item.findElement(By.className("product-title")).getText();
 
         // Navigate to the wishlist
-        driver.findElement(By.className("wishlist-label")).click();
+        driver.findElement(homePage.wishlistPage()).click();
 
         // Get all the elements in the wishlist
         List<WebElement> wishlistProducts = driver.findElements(By.xpath("//tr/td[@class=\"product\"]"));
@@ -191,10 +194,9 @@ public class AddProductToStepDefinition {
 
         // Get the item's title
         String itemName = item.findElement(By.className("product-title")).getText();
-        System.out.println(itemName);
 
         // Navigate to the wishlist
-        List<WebElement> customerServiceLinks = driver.findElements(By.xpath("//div[@class=\"footer-block customer-service\"]//ul[@class=\"list\"]//li//a"));
+        List<WebElement> customerServiceLinks = driver.findElements(homePage.customerServiceLinks());
 
         // Find the "compare products list" and click it
         for (WebElement link : customerServiceLinks){
