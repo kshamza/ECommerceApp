@@ -1,4 +1,4 @@
-@current-feature
+
 Feature: Logged user could add different products to Shopping cart
 
   Background:
@@ -11,7 +11,7 @@ Feature: Logged user could add different products to Shopping cart
     When user navigates to an uncustomizable product
     And user clicks the add to cart button
 
-    Then success flash message displays
+    Then added to "shopping cart" success flash message displays
     And product is added successfully to the shopping cart
 
 
