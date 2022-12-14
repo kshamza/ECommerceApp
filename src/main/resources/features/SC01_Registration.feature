@@ -1,4 +1,3 @@
-@current-feature
 Feature: User could register with valid data
 
   Background:

@@ -1,4 +1,3 @@
-@current-feature
   Feature: Create successful order
 
     Background:

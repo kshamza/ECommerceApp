@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/main/resources/features"
-        , tags = "@current-feature"
+//        , tags = "@current-feature"
         , glue={"stepDefinitions"}
 )
 
