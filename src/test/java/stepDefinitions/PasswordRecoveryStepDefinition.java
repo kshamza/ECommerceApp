@@ -19,7 +19,7 @@ public class PasswordRecoveryStepDefinition {
 
     @Given("user navigates to forgot password page")
     public void user_navigates_to_forgot_password_page(){
-        driver = SharedSteps.getDriver();
+        driver = Hooks.getDriver();
         login = new LoginPage(driver);
         driver.findElement(login.forgotPasswordLink()).click();
         passwordRecoveryPage = new PasswordRecoveryPage(driver);

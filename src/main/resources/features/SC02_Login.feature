@@ -1,3 +1,5 @@
+@current-feature
+
 Feature: User could log in with valid email and password
 
   Background:

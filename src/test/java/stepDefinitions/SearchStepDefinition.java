@@ -20,7 +20,7 @@ public class SearchStepDefinition {
 
     @When("user enters a valid search term in the search box")
     public void user_enters_a_valid_search_term_in_the_search_box(){
-        driver = SharedSteps.getDriver();
+        driver = Hooks.getDriver();
         searchPage = new SearchPage(driver);
         WebElement searchBox = driver.findElement(searchPage.searchBox());
         searchBox.clear();

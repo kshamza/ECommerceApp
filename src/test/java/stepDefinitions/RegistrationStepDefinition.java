@@ -21,7 +21,7 @@ public class RegistrationStepDefinition {
 
     @Given("user navigates to registration page")
     public void user_navigates_to_registration_page(){
-        driver = SharedSteps.getDriver();
+        driver = Hooks.getDriver();
         homePage = new HomePage(driver);
         driver.findElement(homePage.registerLink()).click();
         registration = new RegistrationPage(driver);

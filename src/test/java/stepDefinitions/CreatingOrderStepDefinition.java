@@ -1,10 +1,8 @@
 package stepDefinitions;
 
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
-import io.cucumber.java.en_scouse.An;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +12,6 @@ import pages.HomePage;
 import pages.ShoppingCartPage;
 import utils.DataHub;
 
-import java.sql.Driver;
 import java.util.List;
 
 public class CreatingOrderStepDefinition {
@@ -27,7 +24,7 @@ public class CreatingOrderStepDefinition {
     @When("user clicks the shopping cart button")
     public void user_clicks_the_shopping_cart_button() throws InterruptedException {
 
-        driver = SharedSteps.getDriver();
+        driver = Hooks.getDriver();
         homePage = new HomePage(driver);
 
         // Navigate to the cart

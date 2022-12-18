@@ -22,7 +22,7 @@ public class ColorFilterStepDefinition {
 
     @When("user navigates to shoes subcategory")
     public void user_navigates_to_shoes_subcategory() throws InterruptedException {
-        driver = SharedSteps.getDriver();
+        driver = Hooks.getDriver();
         homePage = new HomePage(driver);
 
         // Retrieve the list of categories

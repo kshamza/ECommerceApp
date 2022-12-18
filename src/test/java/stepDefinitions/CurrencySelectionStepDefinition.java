@@ -21,7 +21,7 @@ public class CurrencySelectionStepDefinition {
 
     @When("user selects euro from currency dropdown menu")
     public void user_selects_euro_from_currency_dropdown_menu() {
-        driver = SharedSteps.getDriver();
+        driver = Hooks.getDriver();
         homePage = new HomePage(driver);
 
         List<WebElement> featuredProductsPrices = driver.findElements(By.xpath("//span[contains(@class,\"actual-price\")]"));

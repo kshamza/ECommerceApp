@@ -8,10 +8,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.CategoryPage;
-import pages.HomePage;
 import pages.ProductPage;
 import pages.ProductsPage;
-import utils.MyMouse;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +30,7 @@ public class TagSelectionStepDefinition {
     @When("user randomly selects one of the tags in the Popular tags section")
     public void user_randomly_selects_one_of_the_tags_in_the_popular_tags_section() {
         categoryPage = new CategoryPage(driver);
-        driver = SharedSteps.getDriver();
+        driver = Hooks.getDriver();
         rG = new Random();
 
         // Put all tags elements in an ArrayList

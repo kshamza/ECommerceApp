@@ -19,7 +19,7 @@ public class LoginStepDefinition {
 
     @Given("user navigates to login page")
     public void user_navigates_to_login_page(){
-        driver = SharedSteps.getDriver();
+        driver = Hooks.getDriver();
         homePage = new HomePage(driver);
         driver.findElement(homePage.loginLink()).click();
         login = new LoginPage(driver);
@@ -58,7 +58,7 @@ public class LoginStepDefinition {
 
     @And("user successfully logs in")
     public void user_successfully_logs_in(){
-        driver = SharedSteps.getDriver();
+        driver = Hooks.getDriver();
         user_enters_valid_email();
         user_enters_valid_password();
         user_clicks_login_button();

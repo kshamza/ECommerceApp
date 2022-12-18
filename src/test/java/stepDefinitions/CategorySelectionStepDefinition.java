@@ -25,7 +25,7 @@ public class CategorySelectionStepDefinition {
 
     @When("user randomly selects one of the categories in the top menu")
     public void user_randomly_selects_one_of_the_categories_in_the_top_menu() throws InterruptedException {
-        driver = SharedSteps.getDriver();
+        driver = Hooks.getDriver();
         homePage = new HomePage(driver);
         rG = new Random();
 

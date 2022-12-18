@@ -24,7 +24,7 @@ public class AddProductToStepDefinition {
 
     @When("user navigates to an uncustomizable product")
     public void user_navigates_to_an_uncustomizable_product() throws InterruptedException {
-        driver = SharedSteps.getDriver();
+        driver = Hooks.getDriver();
         homePage = new HomePage(driver);
 
         // Retrieve the list of categories
