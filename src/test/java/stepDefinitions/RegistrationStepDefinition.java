@@ -110,10 +110,4 @@ public class RegistrationStepDefinition {
     public void continue_button_appears(){
         Assert.assertTrue(driver.findElement(registration.continueButton()).isDisplayed());
     }
-
-    @And("logout link appears")
-    public void logout_link_appears(){
-        Assert.assertNotNull(driver.findElement(homePage.logoutLink()));
-    }
-
 }
