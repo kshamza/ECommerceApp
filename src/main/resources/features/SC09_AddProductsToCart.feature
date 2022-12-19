@@ -1,3 +1,4 @@
+@smoke-test
 
 Feature: Logged user could add different products to Shopping cart
 
