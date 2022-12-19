@@ -1,3 +1,5 @@
+@smoke-test
+
 Feature: Logged User could switch between currencies US-Euro
 
   Background:
