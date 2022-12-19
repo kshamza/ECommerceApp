@@ -1,4 +1,4 @@
-@current-feature
+@smoke-test
 
 Feature: User could log in with valid email and password
 
