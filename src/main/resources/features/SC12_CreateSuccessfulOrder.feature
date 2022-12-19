@@ -1,4 +1,4 @@
-@current-feature
+@smoke-test
 
   Feature: Create successful order
 
