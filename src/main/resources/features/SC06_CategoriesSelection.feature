@@ -1,3 +1,5 @@
+@smoke-test
+
 Feature: Logged user could select different Categories
 
   Background:
