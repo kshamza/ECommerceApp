@@ -1,4 +1,4 @@
-@current-feature
+@smoke-test
 Feature: User could register with valid data
 
   Background:
