@@ -1,3 +1,4 @@
+@smoke-test
 Feature: User could reset his/her password successfully
 
   Background:
