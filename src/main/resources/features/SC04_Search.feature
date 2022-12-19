@@ -1,3 +1,5 @@
+@smoke-test
+
 Feature: Logged User could search for any product
 
   Background:
